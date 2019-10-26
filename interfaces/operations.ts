@@ -29,3 +29,11 @@ export type Supplier<T> = () => T;
  * ["Bob", "Alice"].map(sayHelloOperand).forEach(console.log);
  */
 export type UnaryOperator<T> = (value: T) => T;
+
+/**
+ * Represents a transformation of a `T` into a `K`.
+ * Commonly used for parameterized factory functions.
+ * @example
+ * const childrenFactory: Transformer<string, ReactNode> = (input) => <span>{input}</span>;
+ */
+export type Transformer<T, K> = (value: T) => K;
