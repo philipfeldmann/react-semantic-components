@@ -1,5 +1,9 @@
 # Common interfaces for react components
 
+# Installation
+
+Install using `npm i react-behavioral-interfaces` or `yarn i react-behavioral-interfaces`
+
 ## Consistency
 
 The purpose of this package is to provide utility interfaces for building react component with consistent interfaces.

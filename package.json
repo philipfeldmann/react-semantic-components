@@ -8,6 +8,7 @@
   "scripts": {
     "postinstall": "echo postinstall"
   },
+  "repository": "https://github.com/philipfeldmann/react-behavioral-interfaces",
   "keywords": [
     "react",
     "typescript"
