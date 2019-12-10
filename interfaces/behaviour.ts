@@ -1,6 +1,22 @@
 import { Consumer } from "./operations";
 
 /**
+ * Emits a value that might change to the parent.
+ * @example
+ * interface RandomNumberProps extends ChangeNotifier<number> {}
+ * const RandomEmitter: FunctionComponent<RandomNumberProps> = ({onChange}) => {
+ *  return (
+ *    <>
+ *      <button onClick={() => onChange(Math.random())}>increase</button>
+ *    </>
+ *  )
+ *}
+ */
+export interface ChangeNotifier<T> {
+  onChange: Consumer<T>;
+}
+
+/**
  * Bind a single value of `T` to a component.
  * The implementing component should delegate state changes to the parent,
  * by triggering the `onChange` callback whenver an update is desired.
@@ -15,9 +31,8 @@ import { Consumer } from "./operations";
  *  )
  *}
  */
-export interface ValueBinding<T> {
+export interface ValueBinding<T> extends ChangeNotifier<T> {
   value: T;
-  onChange: Consumer<T>;
 }
 
 /**
